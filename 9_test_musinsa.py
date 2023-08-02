@@ -15,15 +15,15 @@ for i in range(1, 10):
   items = soup.find_all("li", attrs = {"class" :re.compile ("^li_box")})
 
   for item in items:
-  # 상품 이름
 
+    # 성별
     gender = item.find("li", attrs ={"class" : "icon_man sight_out"})
     if gender:
       gender = gender.get_text().strip()
     else:
       continue
 
-
+  # 상품 이름
     name = item.find("p", attrs = {"class" : "list_info"}).get_text().strip()
 
     # 가격
